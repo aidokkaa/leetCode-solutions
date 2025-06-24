@@ -1,14 +1,18 @@
-// Two Sum
+// TwoSum
 var twoSum = function(nums, target) {
- let obj = {};
- for(let i= 0;i<nums.length;i++){
-   obj[nums[i]]=i;
-    const remainder = target-nums[i];
-    if(remainder in obj){
-        return i
+  let obj = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    const remainder = target - nums[i];
+
+    if (remainder in obj) {
+      return [obj[remainder], i]; 
     }
- }
+
+    obj[nums[i]] = i;
+  }
 };
+
 
 // RansomNote
 
